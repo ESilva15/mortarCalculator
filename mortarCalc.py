@@ -19,14 +19,13 @@ class Point():
 
         cur_res = 10
         for p in parts[1:]:
-            # Parse the second part of the coordinate
-            second = 0
+            subgrid_position = 0
             try:
-                second = int(parts[1])
+                subgrid_position = int(p)
             except ValueError as v:
                 raise v
             finally:
-                x, y = self._calc_subgrid(second, cur_res)
+                x, y = self._calc_subgrid(subgrid_position, cur_res)
                 self.x += x
                 self.y += y
                 cur_res *= 10
